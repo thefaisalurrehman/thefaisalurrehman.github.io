@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TenDegree builds clean, private, high-quality Android apps. Maker of Roomy — Clean Photos & Videos.">
+<title>TenDegree — Android Apps</title>
+<style>
+  :root{
+    --blue:#2D6DF6; --blue-dark:#1E4FB8; --blue-light:#E8F0FE; --green:#22C55E;
+    --yellow:#FFD93D; --pink:#FF6B6B; --purple:#9B5DE5;
+    --bg:#F5F7FA; --surface:#FFFFFF; --text:#0F172A; --muted:#64748B;
+    --border:#E2E8F0; --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Nav */
+  .nav{
+    background:rgba(255,255,255,.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border); padding:16px 24px;
+    display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0; z-index:20;
+  }
+  .nav .brand{font-weight:700; font-size:19px; color:var(--text)}
+  .nav .brand span{color:var(--blue)}
+  .nav .links a{color:var(--text); font-size:15px; margin-left:24px; font-weight:500}
+  .nav .links a:hover{color:var(--blue); text-decoration:none}
+  @media(max-width:600px){.nav .links a{margin-left:16px; font-size:14px}}
+
+  /* Hero */
+  .hero{
+    max-width:920px; margin:0 auto; padding:80px 24px 60px; text-align:center;
+  }
+  .eyebrow{
+    display:inline-block; background:var(--blue-light); color:var(--blue);
+    font-size:13px; font-weight:600; padding:7px 16px; border-radius:20px; margin-bottom:24px;
+    letter-spacing:.3px;
+  }
+  .hero h1{
+    font-size:52px; font-weight:800; letter-spacing:-1.5px; line-height:1.1; margin-bottom:20px;
+  }
+  .hero h1 .accent{color:var(--blue)}
+  .hero p{font-size:19px; color:var(--muted); max-width:620px; margin:0 auto 32px}
+  .btn-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    padding:14px 28px; border-radius:30px; font-weight:600; font-size:16px;
+    display:inline-flex; align-items:center; gap:8px; transition:.15s;
+  }
+  .btn-primary{background:var(--blue); color:#fff}
+  .btn-primary:hover{background:var(--blue-dark); text-decoration:none}
+  .btn-ghost{background:var(--surface); color:var(--text); border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--blue); color:var(--blue); text-decoration:none}
+  @media(max-width:600px){.hero h1{font-size:38px} .hero p{font-size:17px}}
+
+  /* Section wrapper */
+  .section{max-width:920px; margin:0 auto; padding:56px 24px}
+  .section-title{font-size:14px; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px}
+  .section h2{font-size:32px; font-weight:700; letter-spacing:-.5px; margin-bottom:32px}
+
+  /* App card */
+  .app-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:24px;
+    padding:36px; display:flex; gap:28px; align-items:center;
+  }
+  @media(max-width:640px){.app-card{flex-direction:column; text-align:center; padding:28px}}
+  .app-icon{
+    width:104px; height:104px; border-radius:24px; flex-shrink:0;
+    background:var(--blue); position:relative; overflow:hidden;
+  }
+  .app-icon .circle{
+    position:absolute; width:58px; height:58px; background:#fff; border-radius:50%;
+    top:23px; left:23px;
+  }
+  .app-icon .check{
+    position:absolute; top:40px; left:34px; width:36px; height:22px;
+    border-left:6px solid var(--green); border-bottom:6px solid var(--green);
+    transform:rotate(-45deg); border-radius:2px;
+  }
+  .app-icon .dot1{position:absolute; width:10px; height:10px; border-radius:50%; background:var(--yellow); top:14px; left:16px}
+  .app-icon .dot2{position:absolute; width:8px; height:8px; border-radius:50%; background:var(--pink); top:18px; right:16px}
+  .app-icon .dot3{position:absolute; width:9px; height:9px; border-radius:50%; background:var(--purple); bottom:16px; right:18px}
+  .app-info h3{font-size:24px; font-weight:700; margin-bottom:6px}
+  .app-info .tag{color:var(--muted); margin-bottom:16px}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px}
+  @media(max-width:640px){.chips{justify-content:center}}
+  .chip{
+    background:var(--blue-light); color:var(--blue); font-size:13px; font-weight:500;
+    padding:5px 12px; border-radius:14px;
+  }
+  .app-links{display:flex; gap:12px; flex-wrap:wrap}
+  @media(max-width:640px){.app-links{justify-content:center}}
+  .app-links a{
+    font-size:14px; font-weight:500; padding:9px 16px; border-radius:20px;
+    border:1px solid var(--border); color:var(--text); transition:.15s;
+  }
+  .app-links a:hover{border-color:var(--blue); color:var(--blue); text-decoration:none}
+  .app-links a.play{background:var(--blue); color:#fff; border-color:var(--blue)}
+  .app-links a.play:hover{background:var(--blue-dark); color:#fff}
+
+  /* Features grid */
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .feature{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:24px;
+  }
+  .feature .ic{
+    width:44px; height:44px; border-radius:12px; background:var(--blue-light);
+    display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:14px;
+  }
+  .feature h4{font-size:17px; font-weight:600; margin-bottom:6px}
+  .feature p{font-size:15px; color:var(--muted); margin:0}
+
+  /* About */
+  .about{
+    background:var(--surface); border:1px solid var(--border); border-radius:24px;
+    padding:40px;
+  }
+  .about p{font-size:17px; color:#334155; margin-bottom:16px}
+  .about p:last-child{margin-bottom:0}
+
+  /* Contact */
+  .contact{text-align:center; padding:64px 24px}
+  .contact h2{font-size:32px; font-weight:700; margin-bottom:12px; letter-spacing:-.5px}
+  .contact p{color:var(--muted); font-size:18px; margin-bottom:24px}
+
+  /* Footer */
+  .footer{
+    background:var(--surface); border-top:1px solid var(--border);
+    padding:32px 24px; text-align:center; color:var(--muted); font-size:14px;
+  }
+  .footer .flinks{margin-bottom:12px}
+  .footer .flinks a{margin:0 12px; color:var(--text)}
+  .footer .flinks a:hover{color:var(--blue)}
+  .footer .copy{font-size:13px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">Ten<span>Degree</span></div>
+  <div class="links">
+    <a href="#apps">Apps</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Android Studio · Kotlin · Jetpack Compose</span>
+  <h1>We build clean,<br><span class="accent">private</span> Android apps.</h1>
+  <p>
+    TenDegree is an independent app studio focused on fast, beautiful, privacy-first
+    tools that solve real problems — without the clutter, the ads-everywhere, or the
+    data harvesting.
+  </p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.tendegree.roomy">Get Roomy on Google Play</a>
+    <a class="btn btn-ghost" href="#apps">See our apps</a>
+  </div>
+</header>
+
+<section class="section" id="apps">
+  <div class="section-title">What we've shipped</div>
+  <h2>Our apps.</h2>
+
+  <div class="app-card">
+    <div class="app-icon">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+      <div class="circle"></div>
+      <div class="check"></div>
+      <div class="dot3"></div>
+    </div>
+    <div class="app-info">
+      <h3>Roomy — Clean Photos &amp; Videos</h3>
+      <p class="tag">Free up storage the easy way. Swipe to clean your gallery in minutes.</p>
+      <div class="chips">
+        <span class="chip">Kotlin</span>
+        <span class="chip">Jetpack Compose</span>
+        <span class="chip">100% on-device</span>
+        <span class="chip">Android 11+</span>
+      </div>
+      <div class="app-links">
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.tendegree.roomy">Download on Google Play</a>
+        <a href="https://thefaisalurrehman.github.io/privacy-policy.html">Privacy Policy</a>
+        <a href="https://thefaisalurrehman.github.io/terms-of-use.html">Terms of Use</a>
+        <a href="mailto:tendegree.dev@gmail.com">Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Why Roomy</div>
+  <h2>Built to respect you.</h2>
+  <div class="grid">
+    <div class="feature">
+      <div class="ic">📱</div>
+      <h4>Swipe to clean</h4>
+      <p>Review photos and videos with a smooth, satisfying swipe. Delete, keep, or decide later.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">✨</div>
+      <h4>Find duplicates</h4>
+      <p>On-device detection spots exact duplicates and similar shots, so you keep only the best.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">🔒</div>
+      <h4>100% private</h4>
+      <p>Your photos never leave your device. Everything is processed locally, always.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">🗂️</div>
+      <h4>Smart groups</h4>
+      <p>Screenshots, large videos, duplicates, and similar photos — sorted for fast cleanup.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">↩️</div>
+      <h4>Safe deletes</h4>
+      <p>Move to Trash with 30-day recovery, or delete permanently. You confirm every time.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">📊</div>
+      <h4>See your progress</h4>
+      <p>Watch your freed-up storage add up in real time, before and after every cleanup.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-title">About</div>
+  <h2>Independent. Focused.</h2>
+  <div class="about">
+    <p>
+      TenDegree is a small, independent Android studio. We build a handful of apps and
+      try to make each one genuinely good — fast, clean, and respectful of the people
+      who use them.
+    </p>
+    <p>
+      Our apps are built with modern Android: Kotlin, Jetpack Compose, MVVM, and clean
+      architecture. We care about smooth performance, thoughtful design, and privacy by
+      default. No selling your data, no dark patterns, no clutter.
+    </p>
+    <p>
+      Roomy is our first app — and we're just getting started.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let's talk.</h2>
+  <p>Questions, feedback, or a bug to report? We'd love to hear from you.</p>
+  <a class="btn btn-primary" href="mailto:tendegree.dev@gmail.com">✉️ tendegree.dev@gmail.com</a>
+</section>
+
+<footer class="footer">
+  <div class="flinks">
+    <a href="https://thefaisalurrehman.github.io/">Home</a>
+    <a href="https://thefaisalurrehman.github.io/privacy-policy.html">Privacy Policy</a>
+    <a href="https://thefaisalurrehman.github.io/terms-of-use.html">Terms of Use</a>
+    <a href="mailto:tendegree.dev@gmail.com">Contact</a>
+  </div>
+  <div class="copy">© 2026 TenDegree. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
