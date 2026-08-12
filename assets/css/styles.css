@@ -899,6 +899,10 @@ svg { width: 100%; height: 100%; display: block; }
   font-weight: 600;
   color: var(--primary);
 }
+.tl-place {
+  font-weight: 500;
+  color: var(--text-3);
+}
 .tl-body > p:not(.tl-org) {
   color: var(--text-2);
   font-size: 15.5px;
