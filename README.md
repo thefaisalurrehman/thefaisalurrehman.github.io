@@ -64,24 +64,30 @@ Adding a "← Back to portfolio" link at the top is a nice touch.
 
 ---
 
-## 🔧 Fill these in before you go live
+## 🔧 One thing left to fill in
 
-Search `index.html` for each of these:
+The WhatsApp number is already wired up (`+92 344 608 1581` → `wa.me/923446081581`),
+in both the hero button and the contact card. **Test it on your phone once before
+you share the site** — a dead WhatsApp link is worse than no link.
 
-| Find | Replace with | Where |
-|---|---|---|
-| `92XXXXXXXXXX` | Your WhatsApp number, country code, **no `+`, no spaces, no dashes** | 2 places (hero button + contact card) |
-| `Earlier roles` | Your actual 2020–2022 employer name | Experience timeline |
+The full experience timeline is filled in from LinkedIn: Gamezay Tech, Softaxes,
+Join App Studio, Jolta and the freelance years. Nothing left to edit there.
+"Product-based companies, Islamabad", which is honest but vague. Search
+`index.html` for that string and put the real company names in. Recruiters read
+timelines closely, and a named employer beats a category every time.
 
-**WhatsApp number format.** For a Pakistani number like `0300 1234567`, drop the
-leading `0` and prefix `92` → `923001234567`. The final link should read:
+### If you'd rather not publish your number as text
 
+The contact card displays the number so people can save it. If you'd prefer it
+not be scrapable by bots, change this line back:
+
+```html
+<p class="mono contact-value">+92 344 608 1581</p>
+<!-- to -->
+<p class="mono contact-value">Chat now</p>
 ```
-https://wa.me/923001234567?text=Hi%20Faisal%2C%20I%20found%20your%20portfolio
-```
 
-Test it on your phone before you announce the site anywhere. A dead WhatsApp
-link on a portfolio is worse than no WhatsApp link.
+The `wa.me` link keeps working either way.
 
 ### Numbers to sanity-check
 
