@@ -1,213 +1,48 @@
-# thefaisalurrehman.github.io
+# Faisal ur Rehman — Personal Portfolio
 
-Personal portfolio for **Faisal ur Rehman** — Senior Android Developer.
+The source for [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/), the personal portfolio of Faisal ur Rehman, Senior Android Developer.
 
-Plain HTML, CSS and JavaScript. No build step, no framework, no dependencies.
-Drop it in the repo, push, done.
+The site showcases professional experience, Android apps, open-source projects, and contact information. It also hosts the TenDegree studio page, app privacy policies and terms, data deletion information, and the publisher's `app-ads.txt` file.
 
-**Live:** https://thefaisalurrehman.github.io/
+## Smart Bluetooth
 
----
+[Privacy policy](https://thefaisalurrehman.github.io/smart-bluetooth-privacy-policy.html) — Bluetooth access, selected media, local Cast to Web sharing, backup, and deletion choices.
 
-## ⚠️ Read this before you push
+## Built with
 
-Your repo is **not empty**. It currently serves the TenDegree studio page *and*
-the legal pages that your Play Store listings link to:
+Plain HTML, CSS, and JavaScript, hosted on GitHub Pages. No package installation or build step is required.
 
-```
-roomy-privacy-policy.html
-roomy-terms-of-use.html
-software-update-privacy-policy.html
-software-update-terms-of-use.html
-software-update-data-deletion.html
-```
+## Repository structure
 
-Google Play checks those URLs. **If you delete them, Roomy and Software Update
-can get flagged or taken down.** Do not wipe the repo.
+- `index.html` — personal portfolio
+- `tendegree.html` — TenDegree app studio
+- `assets/` — portfolio styles, scripts, and images
+- `css/` — styles used by existing pages
+- App policy, terms, and data deletion HTML pages at the repository root
+- `app-ads.txt` — authorized advertising seller declarations
+- `robots.txt` and `sitemap.xml` — search engine discovery
+- `404.html` — custom error page
 
-### What to do instead
+## Local preview
 
-1. **Rename** your current `index.html` → `tendegree.html`
-   (this is your studio page; the portfolio links to it from the Studio section
-   and the footer).
-2. **Copy in** the files from this bundle — `index.html`, `404.html`,
-   `assets/`, `robots.txt`, `sitemap.xml`, `.nojekyll`.
-3. **Leave every other `.html` file exactly where it is.**
+From the repository directory, run:
 
-After that your repo looks like:
-
-```
-├── index.html                              ← new portfolio
-├── tendegree.html                          ← your old index.html, renamed
-├── 404.html
-├── robots.txt
-├── sitemap.xml
-├── .nojekyll
-├── roomy-privacy-policy.html               ← untouched
-├── roomy-terms-of-use.html                 ← untouched
-├── software-update-privacy-policy.html     ← untouched
-├── software-update-terms-of-use.html       ← untouched
-├── software-update-data-deletion.html      ← untouched
-└── assets/
-    ├── css/styles.css
-    ├── js/main.js
-    └── img/favicon.svg
+```sh
+python3 -m http.server 8000
 ```
 
-Every Play Store URL keeps working. Nothing breaks.
+Open [localhost:8000](http://localhost:8000/) in a browser.
 
-### Inside `tendegree.html`
+## Maintenance
 
-Open it and fix the nav link that points home — change `href="index.html"` (or
-`href="/"`) so it still makes sense now that the homepage is the portfolio.
-Adding a "← Back to portfolio" link at the top is a nice touch.
+Keep existing app policy and data deletion URLs stable because published app listings may link directly to them. Preserve `app-ads.txt` at the website root and update its declarations when advertising partnerships change.
 
----
+Portfolio styling is defined in `assets/css/styles.css`, and interactive behavior is in `assets/js/main.js`. App policy pages have their own styles.
 
-## 🔧 One thing left to fill in
+## Contact
 
-The WhatsApp number is already wired up (`+92 344 608 1581` → `wa.me/923446081581`),
-in both the hero button and the contact card. **Test it on your phone once before
-you share the site** — a dead WhatsApp link is worse than no link.
+- Portfolio: [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/)
+- GitHub: [@thefaisalurrehman](https://github.com/thefaisalurrehman)
+- App support: [tendegree.dev@gmail.com](mailto:tendegree.dev@gmail.com)
 
-The full experience timeline is filled in from LinkedIn: Gamezay Tech, Softaxes,
-Join App Studio, Jolta and the freelance years. Nothing left to edit there.
-"Product-based companies, Islamabad", which is honest but vague. Search
-`index.html` for that string and put the real company names in. Recruiters read
-timelines closely, and a named employer beats a category every time.
-
-### If you'd rather not publish your number as text
-
-The contact card displays the number so people can save it. If you'd prefer it
-not be scrapable by bots, change this line back:
-
-```html
-<p class="mono contact-value">+92 344 608 1581</p>
-<!-- to -->
-<p class="mono contact-value">Chat now</p>
-```
-
-The `wa.me` link keeps working either way.
-
-### Numbers to sanity-check
-
-The download figures come from your GitHub README. I filled in the ones it
-didn't specify with conservative estimates — **check these and correct them**:
-
-- AI Face Swap: `1M+`
-- PDF Reader & Editor: `1M+`
-- TV Remote: `500K+`
-
-They appear in the phone mockup (`.app-screen` blocks in the hero) and in
-`Public repositories` count (`data-count="19"` in the stats strip).
-
----
-
-## 🎨 Customising
-
-### Colours
-
-Everything lives in CSS custom properties at the top of `assets/css/styles.css`.
-Change these six and the whole site re-themes:
-
-```css
---bg:      #080B14;   /* page background      */
---surface: #101728;   /* cards                */
---primary: #7C8CFF;   /* periwinkle — accents */
---accent:  #FFC24B;   /* gold — gradients     */
---mint:    #4ADE9B;   /* status / success     */
---text:    #EAEDF7;   /* body copy            */
-```
-
-The light theme is a separate block right below (`[data-theme="light"]`).
-
-### Fonts
-
-Three families, loaded from Google Fonts in the `<head>`:
-
-- **Bricolage Grotesque** — headings. Variable, a bit characterful.
-- **Manrope** — body copy.
-- **JetBrains Mono** — labels, dates, numbers. The IntelliJ font, which felt
-  right for an Android dev.
-
-### The phone in the hero
-
-Each app is one `<article class="app-screen">` in `index.html`. To add, remove
-or reorder apps, just edit those blocks — the indicator dots and the auto-rotate
-timing pick up the count automatically. The `--tint` inline style drives the
-icon colour, the card gradient and the glow behind the phone.
-
-Rotation speed is in `assets/js/main.js`:
-
-```js
-timer = setInterval(() => show(index + 1), 3400);   // milliseconds
-```
-
-### Adding a section
-
-Copy any `<section class="section" id="...">` block, add a matching link in
-`<nav class="nav">`, and put `class="reveal"` on anything you want to fade in on
-scroll. Nothing else to wire up.
-
----
-
-## 🚀 Deploying
-
-```bash
-git clone https://github.com/thefaisalurrehman/thefaisalurrehman.github.io.git
-cd thefaisalurrehman.github.io
-
-git mv index.html tendegree.html      # keep the studio page
-# copy the new files in here
-
-git add .
-git commit -m "New portfolio homepage; move studio page to tendegree.html"
-git push
-```
-
-GitHub Pages redeploys in about a minute. Hard-refresh (`Ctrl+Shift+R`) if you
-see the old page — Pages caches aggressively.
-
-### Running it locally
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000`. Opening `index.html` directly with
-`file://` mostly works, but relative paths behave better over HTTP.
-
----
-
-## ✅ What's in the box
-
-**Design**
-- Dark by default, light theme toggle, remembers your choice
-- Follows the system theme on first visit
-- Responsive from 320px up
-
-**Motion**
-- Staggered hero entrance
-- Scroll-triggered reveals
-- Animated phone cycling through six shipped apps
-- Count-up stats
-- Infinite tech marquee, pauses on hover
-- Material-style ripple on every button and card
-- Drifting ambient gradients
-- Everything switches off under `prefers-reduced-motion`
-
-**Technical**
-- Zero dependencies, zero build step
-- Open Graph + Twitter cards for link previews
-- JSON-LD `Person` schema for search engines
-- `sitemap.xml` and `robots.txt`
-- Skip link, visible focus rings, ARIA labels, semantic landmarks
-- Custom 404
-- Print stylesheet — `Ctrl+P` gives a usable one-page CV
-- Works with JavaScript disabled (content stays visible, just static)
-
----
-
-## 📄 Licence
-
-Content and design © Faisal ur Rehman. Code is yours to do whatever you want with.
+© Faisal ur Rehman. All rights reserved.
