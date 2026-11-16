@@ -6,7 +6,7 @@ The site showcases professional experience, Android apps, open-source projects, 
 
 ## Phone Widgets
 
-[Privacy policy](https://thefaisalurrehman.github.io/phone-widgets-privacy-policy.html) — optional permissions, local widget data, Health Connect, weather services, Android backup and deletion choices.
+[Privacy policy](https://thefaisalurrehman.github.io/phone-widgets-privacy-policy.html) — optional permissions, local widget data, Health Connect, Firebase Analytics/Crashlytics/Cloud Messaging, planned advertising, weather services, backup and deletion choices.
 
 ## Smart Bluetooth
 
