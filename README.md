@@ -4,6 +4,10 @@ The source for [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io
 
 The site showcases professional experience, Android apps, open-source projects, and contact information. It also hosts the TenDegree studio page, app privacy policies and terms, data deletion information, and the publisher's `app-ads.txt` file.
 
+## Phone Widgets
+
+[Privacy policy](https://thefaisalurrehman.github.io/phone-widgets-privacy-policy.html) — optional permissions, local widget data, Health Connect, weather services, Android backup and deletion choices.
+
 ## Smart Bluetooth
 
 [Privacy policy](https://thefaisalurrehman.github.io/smart-bluetooth-privacy-policy.html) — Bluetooth access, selected media, local Cast to Web sharing, backup, and deletion choices.
