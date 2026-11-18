@@ -1,48 +1,47 @@
-# Faisal ur Rehman — Personal Portfolio
+# thefaisalurrehman.github.io
 
-The source for [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/), the personal portfolio of Faisal ur Rehman, Senior Android Developer.
+Source for **[thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/)**, the personal portfolio of Faisal ur Rehman, Senior Android Developer.
 
-The site showcases professional experience, Android apps, open-source projects, and contact information. It also hosts the TenDegree studio page, app privacy policies and terms, data deletion information, and the publisher's `app-ads.txt` file.
+This site also hosts the legal pages for apps published under **[TenDegree](https://thefaisalurrehman.github.io/tendegree.html)**, plus the publisher's `app-ads.txt` file.
 
-## Smart Bluetooth
+## Pages
 
-[Privacy policy](https://thefaisalurrehman.github.io/smart-bluetooth-privacy-policy.html) — Bluetooth access, selected media, local Cast to Web sharing, backup, and deletion choices.
+| Page | Link |
+| --- | --- |
+| Portfolio | [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/) |
+| TenDegree studio | [tendegree.html](https://thefaisalurrehman.github.io/tendegree.html) |
 
-## Built with
+## App legal pages
 
-Plain HTML, CSS, and JavaScript, hosted on GitHub Pages. No package installation or build step is required.
+| App | Privacy Policy | Terms of Use | Data Deletion |
+| --- | --- | --- | --- |
+| Smart Bluetooth | [View](https://thefaisalurrehman.github.io/smart-bluetooth-privacy-policy.html) | — | — |
+| Roomy | [View](https://thefaisalurrehman.github.io/roomy-privacy-policy.html) | [View](https://thefaisalurrehman.github.io/roomy-terms-of-use.html) | — |
+| Software Update | [View](https://thefaisalurrehman.github.io/software-update-privacy-policy.html) | [View](https://thefaisalurrehman.github.io/software-update-terms-of-use.html) | [View](https://thefaisalurrehman.github.io/software-update-data-deletion.html) |
 
-## Repository structure
+Older Software Update URLs (`*app_updater.html`, `privacy-policyapp_update.html`) are kept online because existing store listings may still link to them.
 
-- `index.html` — personal portfolio
-- `tendegree.html` — TenDegree app studio
-- `assets/` — portfolio styles, scripts, and images
-- `css/` — styles used by existing pages
-- App policy, terms, and data deletion HTML pages at the repository root
-- `app-ads.txt` — authorized advertising seller declarations
-- `robots.txt` and `sitemap.xml` — search engine discovery
-- `404.html` — custom error page
+## Ads
 
-## Local preview
+[`app-ads.txt`](https://thefaisalurrehman.github.io/app-ads.txt) lists the authorized ad sellers for TenDegree apps, following the [IAB app-ads.txt standard](https://iabtechlab.com/ads-txt/).
 
-From the repository directory, run:
+## Tech
+
+Plain HTML, CSS, and JavaScript on GitHub Pages. No build step.
+
+To preview locally:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open [localhost:8000](http://localhost:8000/) in a browser.
-
-## Maintenance
-
-Keep existing app policy and data deletion URLs stable because published app listings may link directly to them. Preserve `app-ads.txt` at the website root and update its declarations when advertising partnerships change.
-
-Portfolio styling is defined in `assets/css/styles.css`, and interactive behavior is in `assets/js/main.js`. App policy pages have their own styles.
+Then open [localhost:8000](http://localhost:8000/).
 
 ## Contact
 
-- Portfolio: [thefaisalurrehman.github.io](https://thefaisalurrehman.github.io/)
 - GitHub: [@thefaisalurrehman](https://github.com/thefaisalurrehman)
 - App support: [tendegree.dev@gmail.com](mailto:tendegree.dev@gmail.com)
 
-© Faisal ur Rehman. All rights reserved.
+## License
+
+© Faisal ur Rehman. All rights reserved. The code is public so it can be hosted on GitHub Pages. Please don't copy or reuse the content, design, or legal text without permission.
